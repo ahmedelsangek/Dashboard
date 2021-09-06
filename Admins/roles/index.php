@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php require "./head.php"; ?>
+    <?php require "../head.php"; ?>
     <body class="sb-nav-fixed">
-        <?php require "./nav.php"; ?>
+        <?php require "../nav.php"; ?>
         <div id="layoutSidenav">
-            <?php require "./sidenav.php"; ?>
+            <?php require "../sidenav.php"; ?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -560,9 +560,9 @@
                         </div>
                     </div>
                 </main>
-                <?php require "./footer.php"; ?>
+                <?php require "../footer.php"; ?>
             </div>
         </div>
-        <?php require "./scripts.php"; ?>
+        <?php require "../scripts.php"; ?>
     </body>
 </html>

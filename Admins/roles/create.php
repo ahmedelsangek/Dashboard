@@ -6,28 +6,24 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $role = cleanInputs($_POST['role']);
 
-        $errors = [];
-
         if (validate($role, 1)){
-            $errors['name'] = "field required";
-        }
-
-        if (count($errors) > 0){
-            $_SESSION['message'] = $errors;
+            $message = "field required";
         } else {
+
             $sql = "insert into roles (name) values ('$role')";
             $op = mysqli_query($con, $sql);
 
             if ($op){
                 header("Location: index.php");
             } else {
-                $_SESSION['message'] = ['try again'];
+                $message = 'try again';
             }
         }
     }
 
+    $_SESSION['message'] = [$message];
 
-
+    mysqli_close($con);
 ?>
 
 

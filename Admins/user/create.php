@@ -54,68 +54,83 @@
         }
     }
 
+    if (isset($_SESSION['message'])){
+        foreach ($_SESSION['message'] as $value) {
+            echo $value . "</br>";
+        }
+        unset($_SESSION['message']);
+    } else {
+        echo "";
+    }
+
     mysqli_close($con);
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php require "../head.php"; ?>
-    <body class="sb-nav-fixed">
-        <?php require "../nav.php"; ?>
-        <div id="layoutSidenav">
-            <?php require "../sidenav.php"; ?>
-            <div id="layoutSidenav_content">
+    <?php require "../head.php";?>
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <?php
-                                if (isset($_SESSION['message'])){
-                                    foreach ($_SESSION['message'] as $value) {
-                                        # code...
-                                        echo '<li class="breadcrumb-item active">'. $value .'</li>';
-                                        unset ($_SESSION['message']);
-                                    }
-                                } else {
-                                    echo '<li class="breadcrumb-item active">Dashboard</li>';
-                                }
-                            ?>
-                        </ol>
-                        <div class="mb-4">
-                            <div class="container">
-                                <h2>Add Role Name</h2>
-                                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" require>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                                    <div class="card-body">
+                                        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input type="text" class="form-control" id="name" name="name" require>
+                                                        <label for="name" class="form-label">Name</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="email" name="email" require>
+                                                <label for="email" class="form-label">Email</label>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input type="password" class="form-control" id="password" name="password" require>
+                                                        <label for="password" class="form-label">Password</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        
+                                                        <select class="form-select" aria-label="Default select example" id="role" name="role">
+                                                            <option selected></option>
+                                                            <?php while ($data = mysqli_fetch_assoc($op)){ ?>
+                                                                <option value="<?php echo $data['id'];?>"><?php echo $data['name'];?></option>
+                                                            <?php } ?>
+                                                        </select>
+                                                        <label for="role" class="form-label">Role</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                            <button type="submit" class="btn btn-primary btn-block">Create</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="email" name="email" require>
+                                    <div class="card-footer text-center py-3">
+                                        <div class="small"><a href="login.php">Have an account? Go to login</a></div>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="password" name="password" require>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="role" class="form-label">Role</label>
-                                        <select class="form-select" aria-label="Default select example" id="role" name="role">
-                                            <option selected>Open this select menu</option>
-                                            <?php while ($data = mysqli_fetch_assoc($op)){ ?>
-                                                <option value="<?php echo $data['id'];?>"><?php echo $data['name'];?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Create</button>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </main>
-                <?php require "../footer.php"; ?>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <?php require "../footer.php";?>
             </div>
         </div>
-        <?php require "../scripts.php"; ?>
+        <?php require "../scripts.php";?>
     </body>
 </html>

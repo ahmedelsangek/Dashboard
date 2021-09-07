@@ -105,7 +105,7 @@
                             <div class="container">
                                 <h2>Add Product</h2>
                                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
-                                <div class="mb-3">
+                                    <div class="mb-3">
                                         <label for="name" class="form-label">Name</label>
                                         <input type="text" class="form-control" id="name" name="name" require>
                                     </div>

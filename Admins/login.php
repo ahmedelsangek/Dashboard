@@ -7,7 +7,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $email = cleanInputs($_POST['email']);
-        $password = cleanInputs($_POST['password']);
+        $password = sha1($_POST['password']);
 
         if (!validate($email, 1)){
             $errors['email'] = "Email field required";

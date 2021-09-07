@@ -26,7 +26,7 @@
 
         $name = cleanInputs($_POST['name']);
         $email = cleanInputs($_POST['email']);
-        $password = cleanInputs($_POST['password']);
+        $password = sha1($_POST['password']);
         $role = cleanInputs($_POST['role']);
 
         if (!validate($name, 1)){
@@ -53,7 +53,7 @@
         if (count($errors) > 0){
             $_SESSION['message'] = $errors;
         } else {
-            $updateSql = "update admin set name='$name', email='$email', password='password', role=$role where id=$id";
+            $updateSql = "update admin set name='$name', email='$email', password='$password', role=$role where id=$id";
             $updateOp = mysqli_query($con, $updateSql);
 
             if ($updateOp){

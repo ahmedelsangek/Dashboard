@@ -4,13 +4,13 @@
     require "../helpers/dbConnection.php";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $role = cleanInputs($_POST['role']);
+        $category = cleanInputs($_POST['category']);
 
-        if (!validate($role, 1)){
+        if (!validate($category, 1)){
             $message = "field required";
         } else {
 
-            $sql = "insert into roles (name) values ('$role')";
+            $sql = "insert into category (name) values ('$category')";
             $op = mysqli_query($con, $sql);
 
             if ($op){
@@ -52,10 +52,10 @@
                         </ol>
                         <div class="mb-4">
                             <div class="container">
-                                <h2>Add Role Name</h2>
+                                <h2>Add Category</h2>
                                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" id="role" name="role" require>
+                                        <input type="text" class="form-control" id="category" name="category" require>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </form>

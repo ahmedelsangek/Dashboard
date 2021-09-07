@@ -18,7 +18,7 @@
 
         $role = cleanInputs($_POST['role']);
 
-        if (validate($role, 1)){
+        if (!validate($role, 1)){
 
             $message = "field required";
 
@@ -74,7 +74,7 @@
                                     <div class="mb-3">
                                         <input value="<?php echo $data['name'] ;?>" type="text" class="form-control" id="role" name="role" require>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </form>
                             </div>
                         </div>

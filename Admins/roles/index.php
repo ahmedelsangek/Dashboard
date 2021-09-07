@@ -1,6 +1,7 @@
 <?php
-
+    session_start();
     require "../helpers/dbConnection.php";
+    require "../checkUser.php";
 
     //Get All Roles
     $sql = "SELECT * FROM roles";

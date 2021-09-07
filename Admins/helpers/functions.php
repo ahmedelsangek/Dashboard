@@ -56,4 +56,8 @@
         }
     }
 
+    // function url($input){
+    //     return "http://" . $_SERVER['HTTP_HOST'] . '/Admins/' . $input;
+    // }
+
 ?>

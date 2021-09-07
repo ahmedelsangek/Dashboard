@@ -1,9 +1,9 @@
 <?php
 
     require "../helpers/functions.php";
+    require "../checkUser.php";
     require "../helpers/dbConnection.php";
 
-    //Get Role Name
     //Get All Roles
     $sql = "SELECT * FROM roles";
     $op = mysqli_query($con, $sql);

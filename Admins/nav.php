@@ -11,5 +11,5 @@
         </div>
     </form>
     <!-- Navbar-->
-    <a href="./logout.php" class="btn btn-primary" style="margin-right: 20px">Logout</a>
+    <a href="http://localhost/PHP_Dashboard/Admins/logout.php" class="btn btn-primary" style="margin-right: 20px">Logout</a>
 </nav>

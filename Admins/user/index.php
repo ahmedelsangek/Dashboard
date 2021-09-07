@@ -1,6 +1,8 @@
 <?php
-
+    session_start();
+    require "../checkUser.php";
     require "../helpers/dbConnection.php";
+
 
     //Get All Roles
     $sql = "SELECT admin.*, roles.name as role_name FROM admin left join roles on admin.role=roles.id";

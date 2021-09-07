@@ -1,6 +1,7 @@
 <?php
-
-    require "../helpers/dbConnection.php";
+session_start();
+require "../checkUser.php";
+require "../helpers/dbConnection.php";
 
     //Get All Roles
     $sql = "select product.*, admin.name as admin_name, category.name as cate_name

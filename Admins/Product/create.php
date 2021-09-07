@@ -1,6 +1,7 @@
 <?php
 
     require "../helpers/functions.php";
+    require "../checkUser.php";
     require "../helpers/dbConnection.php";
 
     //Get Admins

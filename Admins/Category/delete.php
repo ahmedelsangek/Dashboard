@@ -2,6 +2,7 @@
 
     require "../helpers/functions.php";
     require "../helpers/dbConnection.php";
+    require "../checkUser.php";
 
     $id = sanitize($_GET['id'], 1);
 

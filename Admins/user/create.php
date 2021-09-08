@@ -1,7 +1,7 @@
 <?php
 
     require "../helpers/functions.php";
-    require "../checkUser.php";
+    require "../checkSuperAdmin.php";
     require "../helpers/dbConnection.php";
 
     //Get All Roles

@@ -2,7 +2,7 @@
 
     require "../helpers/functions.php";
     require "../helpers/dbConnection.php";
-    require "../checkUser.php";
+    require "../checkSuperAdmin.php";
 
     $id = sanitize($_GET['id'], 1);
 

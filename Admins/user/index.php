@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require "../checkUser.php";
+    require "../checkSuperAdmin.php";
     require "../helpers/dbConnection.php";
 
 

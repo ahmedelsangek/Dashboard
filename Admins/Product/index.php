@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../checkUser.php";
+require "../checkAdmin.php";
 require "../helpers/dbConnection.php";
 
     //Get All Roles

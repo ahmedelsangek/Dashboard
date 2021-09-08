@@ -2,7 +2,7 @@
 
     require "../helpers/functions.php";
     require "../helpers/dbConnection.php";
-    require "../checkUser.php";
+    require "../checkSuperAdmin.php";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $category = cleanInputs($_POST['category']);

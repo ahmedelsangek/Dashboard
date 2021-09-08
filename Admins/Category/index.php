@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "../helpers/dbConnection.php";
-require "../checkUser.php";
+require "../checkSuperAdmin.php";
 
     //Get All Roles
     $sql = "SELECT * FROM category";

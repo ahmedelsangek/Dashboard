@@ -25,7 +25,8 @@
             $_SESSION['message'] = $errors;
         } else {
 
-            $sql = "select * from admin where email='$email' and password='$password'";
+            // $sql = "select * from admin where email='$email' and password='$password'";
+            $sql = "select admin.*, roles.name as role_name from admin left join roles on admin.role=roles.id where email='$email' and password='$password'";
             $op = mysqli_query($con, $sql);
 
             if (mysqli_num_rows($op) > 0){

@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    require "./checkUser.php";
+    require "./checkSuperAdmin.php";
 ?>
 
 <!DOCTYPE html>
